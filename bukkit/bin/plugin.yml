@@ -1,0 +1,9 @@
+name: upgrading
+main: com.gmail.louisdw1.upgrading
+version: 0.92
+commands:
+   leave:
+      description: Type this to leave a game!
+      usage: /leave
+      permission: 
+      permission-message: You don't have <permission>
