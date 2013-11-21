@@ -1,5 +1,8 @@
 package com.gmail.louisdw1.freddie;
 
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,12 +22,17 @@ public class parkour implements Listener{
 		//Note go onto eclipse and get the player variable and press . after it and scroll through :-)
 		//Sends a message to a player player.getName() returns a string of the players name
 		player.sendMessage("Welcome "+player.getName()+"!");
+		player.teleport (new Location(Bukkit.getWorld("world_parkour"), 183, 4, 374));
 		
 	}
 	@EventHandler
 	public void onSpawn(CreatureSpawnEvent event)
 	{
-		
+		Entity entity = event.getEntity();
+		if(entity.getWorld()==Bukkit.getWorld("world_parkour"))
+		{
+			event.setCancelled(true);
+		}
 		//Bukkit.broadcastMessage("Location : "+event.getLocation());
 	}
 	
